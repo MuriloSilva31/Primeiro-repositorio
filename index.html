@@ -1,22 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-     <font color="000000">
-    <head>
-    <meta cherset="UTF-8">
-        <link rel="index.css" type="text/css" href="index.css>
-    <title>Document</title>
-    </head>
-    <body>
-        <div class="container">
-            <body style="background-color:#121212">
-            <picture>
-                <source media="max-width:450px" srcset="400x400.png" type="image/png">
-                <img src="700x700.png" alt="imagem flexível">
-                <img src="1000x1000.png" alt="imagem flexível">
-        </div>
-        <div>total</div>  
-<p1><b>compre nosso tênis que chegaram recentemente o <a href="" rel="next">Petitpoe</a>"</b></p1>
-        <P2>Esse novo tênis foi idealizado para os skatistas apaixonados pelo esporte</P2>
-        </font>
-        </body>
-         
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Dia Útil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verificador de Dia Útil</h1>
+        <input type="date" id="dateInput">
+        <button onclick="checkBusinessDay()">Verificar</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function checkBusinessDay() {
+            const dateInput = document.getElementById('dateInput').value;
+            const date = new Date(dateInput);
+            const day = date.getDay();
+            const result = document.getElementById('result');
+
+            if (day === 0 || day === 6) {
+                result.textContent = 'Não é um dia útil.';
+            } else {
+                result.textContent = 'É um dia útil.';
+            }
+        }
+    </script>
+</body>
+</html>
+
